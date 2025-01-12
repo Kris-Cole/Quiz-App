@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     restart.addEventListener("click", () => {
         currentQuestionIndex = 0;
         score = 0;
-
+        next.style.display = "block";
         scoreContainer.style.display = "none";
         showQuestion();
     });
