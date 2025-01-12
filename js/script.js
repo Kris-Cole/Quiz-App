@@ -6,7 +6,7 @@ const quizData = [
         correct: 0
     },
     {
-        quetion: "What is the capital of Italy",
+        question: "What is the capital of Italy",
         options: ["Paris", "Madrid", "Rome", "Berlin"],
         correct: 2
     },
