@@ -6,14 +6,14 @@ const quizData = [
         correct: 0
     },
     {
-        quetion: "What is the capital of Italy?",
-        options: ["Paris", "Madrid", "Berlin"],
+        quetion: "What is the capital of Italy",
+        options: ["Paris", "Madrid", "Rome", "Berlin"],
         correct: 2
     },
     {
         question: "What does CSS stand for?",
         options: ["Creative Style Sheets", "Cascading Style Sheets", "Computer Style Sheets"],
-        correct: 0
+        correct: 1
     }
 ];
 
@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let score = 0;
 
     const questionP1 = document.getElementById("question");
+    console.log(questionP1);
+
     const optionsP1 = document.getElementById("option");
     const next = document.getElementById("next");
     const feedbackP1 = document.getElementById("feedback");
@@ -32,6 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showQuestion() {
         const currentQuestion = quizData[currentQuestionIndex];
+        console.log("Current question:", currentQuestion); // Debugging
+        console.log(currentQuestion.question);
+
         questionP1.textContent = currentQuestion.question;
         optionsP1.innerHTML = "";
 
@@ -58,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     next.addEventListener("click", () => {
-        currentQuestionIndex;
+        currentQuestionIndex++;
         if (currentQuestionIndex < quizData.length) {
             showQuestion();
         } else {
@@ -72,6 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         feedbackP1.textContent = "";
         scoreContainer.style.display = "block";
         finalScoreP1.textContent = `Your score: ${score} / ${quizData.length}`;
+        next.style.display = "none"; // Hide the Next button
     }
 
     restart.addEventListener("click", () => {
